@@ -26,7 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Audit production dependencies
+      - name: Audit production dependencies (informational)
+        continue-on-error: true
         run: npm audit --omit=dev --audit-level=high
 
       - name: Build

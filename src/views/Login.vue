@@ -152,7 +152,7 @@ onUnmounted(() => {
 
     <div class="login-card">
       <div class="card-glow"></div>
-      <h1 class="title">UAV 监测系统</h1>
+      <h1 class="title">AeroScope</h1>
       <p class="subtitle">超视距大气环境与电磁频谱双维监测</p>
 
       <form class="login-form" @submit.prevent="handleSubmit">

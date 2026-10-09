@@ -6,7 +6,7 @@ import { TOKEN_KEY } from '@/api/request.js'
 
 const route = useRoute()
 const router = useRouter()
-const pageTitle = computed(() => route.meta?.title ?? 'UAV 监测系统')
+const pageTitle = computed(() => route.meta?.title ?? 'AeroScope')
 
 async function logout() {
   try {
@@ -25,7 +25,7 @@ async function logout() {
       <h1 class="header-title">{{ pageTitle }}</h1>
     </header>
     <aside class="layout-sidebar">
-      <h2 class="sidebar-title">UAV 监测系统</h2>
+      <h2 class="sidebar-title">AeroScope</h2>
       <nav class="nav">
         <router-link to="/dashboard" class="nav-item" active-class="active">
           <span class="nav-icon">

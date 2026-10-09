@@ -9,6 +9,7 @@ import {
 
 let presetTimer = null
 const autoScan = ref(false)
+const demoVideoUrl = import.meta.env.VITE_DEMO_VIDEO_URL || ''
 
 function toggleAutoScan() {
   autoScan.value = !autoScan.value
@@ -679,16 +680,20 @@ onUnmounted(() => {
           <div class="panel-title">实时视频</div>
           <div class="video-card">
             <video
+              v-if="demoVideoUrl"
               class="real-video"
+              :src="demoVideoUrl"
               controls
               autoplay
               muted
               loop
               playsinline
             >
-              <source src="/video/3月28日.mp4" type="video/mp4" />
               您的浏览器不支持 video 标签
             </video>
+            <div v-else class="video-placeholder">
+              未配置演示视频
+            </div>
           </div>
         </div>
 
@@ -995,6 +1000,18 @@ onUnmounted(() => {
   background: #000;
   border: 1px solid rgba(59, 130, 246, 0.12);
   display: block;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: rgba(226, 232, 240, 0.58);
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px dashed rgba(59, 130, 246, 0.2);
+  font-size: 13px;
 }
 
 .video-caption {
